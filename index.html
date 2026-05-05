@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.8.4.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
+		pre { font-size: 10pt; font-family: "Liberation Mono", monospace; background: transparent }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre>
+&lt;!DOCTYPE html&gt;
+
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Asuna ✿ offline&lt;/title&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&amp;family=M+PLUS+Rounded+1c:wght@300;400;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+  :root {
+    --pink: #f4a7c3;
+    --pink-light: #fde8f0;
+    --pink-deep: #e07fa0;
+    --lavender: #d4b8e0;
+    --cream: #fff8fb;
+    --text: #4a3040;
+    --text-light: #9a7888;
+    --bubble-asuna: #fff0f6;
+    --shadow: rgba(220,140,170,0.18);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+font-family: ‘M PLUS Rounded 1c’, sans-serif;
+background: linear-gradient(135deg,#fce4ec 0%,#f8bbd0 30%,#e1bee7 70%,#fce4ec 100%);
+background-size: 400% 400%;
+animation: bgShift 12s ease infinite;
+min-height: 100vh;
+display: flex; align-items: center; justify-content: center;
+padding: 16px;
+}
+@keyframes bgShift {
+0%,100%{background-position:0% 50%}
+50%{background-position:100% 50%}
+}
+
+.petal {
+position:fixed; font-size:18px; opacity:0.35;
+animation:floatDown linear infinite; pointer-events:none; z-index:0;
+}
+@keyframes floatDown {
+0%{transform:translateY(-30px) rotate(0deg);opacity:0}
+10%{opacity:0.35} 90%{opacity:0.35}
+100%{transform:translateY(105vh) rotate(360deg);opacity:0}
+}
+
+.chat-wrapper {
+width:100%; max-width:420px;
+background:rgba(255,250,252,0.92);
+border-radius:28px;
+box-shadow:0 8px 40px var(–shadow),0 2px 12px rgba(244,167,195,0.15);
+display:flex; flex-direction:column;
+height:90vh; max-height:780px;
+overflow:hidden; position:relative; z-index:1;
+backdrop-filter:blur(12px);
+border:1.5px solid rgba(244,167,195,0.3);
+}
+
+/* Loading screen */
+#loadScreen {
+position:absolute; inset:0; z-index:20;
+background:rgba(255,248,251,0.98);
+display:flex; flex-direction:column;
+align-items:center; justify-content:center;
+padding:32px; border-radius:28px;
+text-align:center;
+}
+.load-avatar {
+font-size:56px; margin-bottom:16px;
+animation:breathe 2s ease-in-out infinite;
+}
+@keyframes breathe {
+0%,100%{transform:scale(1)} 50%{transform:scale(1.08)}
+}
+.load-title {
+font-family:‘Klee One’,cursive;
+font-size:22px; color:#5c2d4a; margin-bottom:8px;
+}
+.load-sub {
+font-size:13px; color:var(–text-light);
+line-height:1.7; margin-bottom:24px;
+}
+.load-bar-wrap {
+width:100%; max-width:280px;
+background:rgba(244,167,195,0.2);
+border-radius:20px; height:8px;
+overflow:hidden; margin-bottom:12px;
+}
+.load-bar {
+height:100%; width:0%;
+background:linear-gradient(90deg,#f4a7c3,#e07fa0);
+border-radius:20px;
+transition:width 0.4s ease;
+}
+.load-status {
+font-size:12px; color:var(–text-light);
+min-height:18px;
+}
+.load-note {
+font-size:11px; color:rgba(154,120,136,0.6);
+margin-top:16px; line-height:1.6;
+}
+
+/* Header */
+.header {
+background:linear-gradient(135deg,#f9c5d8,#e8b4d8);
+padding:16px 20px 12px;
+display:flex; align-items:center; gap:12px;
+border-bottom:1px solid rgba(244,167,195,0.25);
+position:relative; overflow:hidden;
+}
+.header::after {
+content:’’; position:absolute; top:-20px; right:-20px;
+width:80px; height:80px;
+background:rgba(255,255,255,0.15); border-radius:50%;
+}
+.avatar-wrap { position:relative; flex-shrink:0; }
+.avatar {
+width:52px; height:52px; border-radius:50%;
+background:linear-gradient(135deg,#fff0f6,#fce4ec);
+border:2.5px solid rgba(255,255,255,0.7);
+display:flex; align-items:center; justify-content:center;
+font-size:26px;
+box-shadow:0 3px 12px rgba(220,140,170,0.3);
+animation:breathe 4s ease-in-out infinite;
+}
+.status-dot {
+position:absolute; bottom:2px; right:2px;
+width:11px; height:11px; background:#a8d8b0;
+border-radius:50%; border:2px solid white;
+animation:pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+0%,100%{box-shadow:0 0 0 0 rgba(168,216,176,0.5)}
+50%{box-shadow:0 0 0 5px rgba(168,216,176,0)}
+}
+.header-info { flex:1; }
+.header-name {
+font-family:‘Klee One’,cursive;
+font-size:20px; color:#5c2d4a; font-weight:600;
+}
+.header-status { font-size:11.5px; color:rgba(92,45,74,0.65); margin-top:1px; font-weight:300; }
+.header-actions { display:flex; gap:8px; }
+.icon-btn {
+width:32px; height:32px; border-radius:50%; border:none;
+background:rgba(255,255,255,0.45); cursor:pointer;
+display:flex; align-items:center; justify-content:center;
+font-size:15px; transition:all 0.2s; color:#5c2d4a;
+}
+.icon-btn:hover { background:rgba(255,255,255,0.7); transform:scale(1.1); }
+
+/* Messages */
+.messages {
+flex:1; overflow-y:auto; padding:16px 14px;
+display:flex; flex-direction:column; gap:10px;
+scroll-behavior:smooth;
+}
+.messages::-webkit-scrollbar { width:4px; }
+.messages::-webkit-scrollbar-thumb { background:rgba(244,167,195,0.4); border-radius:4px; }
+
+.msg-row {
+display:flex; align-items:flex-end; gap:8px;
+animation:msgIn 0.3s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes msgIn {
+from{opacity:0;transform:translateY(14px) scale(0.95)}
+to{opacity:1;transform:translateY(0) scale(1)}
+}
+.msg-row.user { flex-direction:row-reverse; }
+.msg-avatar {
+width:28px; height:28px; border-radius:50%;
+background:linear-gradient(135deg,#fce4ec,#f8bbd0);
+display:flex; align-items:center; justify-content:center;
+font-size:14px; flex-shrink:0;
+box-shadow:0 2px 6px rgba(220,140,170,0.2);
+}
+.bubble {
+max-width:72%; padding:10px 14px; border-radius:18px;
+font-size:14px; line-height:1.55; color:var(–text);
+word-break:break-word;
+}
+.bubble.asuna {
+background:var(–bubble-asuna);
+border:1px solid rgba(244,167,195,0.25);
+border-bottom-left-radius:5px;
+box-shadow:0 2px 10px var(–shadow);
+}
+.bubble.user {
+background:linear-gradient(135deg,#f4a7c3,#e07fa0);
+color:white; border-bottom-right-radius:5px;
+box-shadow:0 2px 10px rgba(224,127,160,0.3);
+}
+.timestamp {
+font-size:10px; color:var(–text-light);
+margin-top:3px; padding:0 4px; opacity:0.7;
+}
+.msg-row.user .timestamp { text-align:right; }
+
+/* Typing */
+.typing-row { display:flex; align-items:flex-end; gap:8px; }
+.typing-bubble {
+background:var(–bubble-asuna);
+border:1px solid rgba(244,167,195,0.25);
+border-radius:18px; border-bottom-left-radius:5px;
+padding:12px 16px; display:flex; gap:5px; align-items:center;
+box-shadow:0 2px 10px var(–shadow);
+}
+.dot {
+width:7px; height:7px; border-radius:50%; background:var(–pink);
+animation:dotBounce 1.2s ease-in-out infinite;
+}
+.dot:nth-child(2){animation-delay:0.2s}
+.dot:nth-child(3){animation-delay:0.4s}
+@keyframes dotBounce {
+0%,60%,100%{transform:translateY(0);opacity:0.5}
+30%{transform:translateY(-6px);opacity:1}
+}
+
+/* Suggestions */
+.suggestions {
+padding:6px 14px 2px; display:flex; gap:7px;
+overflow-x:auto; scrollbar-width:none;
+}
+.suggestions::-webkit-scrollbar { display:none; }
+.suggestion-chip {
+flex-shrink:0; padding:5px 12px; border-radius:20px;
+border:1.5px solid rgba(244,167,195,0.5);
+background:rgba(253,232,240,0.6); font-size:12px;
+color:var(–pink-deep); cursor:pointer;
+font-family:‘M PLUS Rounded 1c’,sans-serif;
+transition:all 0.2s; white-space:nowrap;
+}
+.suggestion-chip:hover { background:var(–pink); color:white; border-color:var(–pink); transform:translateY(-1px); }
+
+/* Input */
+.input-area {
+padding:10px 14px 14px;
+background:rgba(255,248,251,0.8);
+border-top:1px solid rgba(244,167,195,0.15);
+}
+.input-row {
+display:flex; align-items:flex-end; gap:8px;
+background:white; border-radius:24px;
+border:1.5px solid rgba(244,167,195,0.35);
+padding:6px 6px 6px 14px;
+box-shadow:0 2px 12px rgba(220,140,170,0.1);
+transition:border-color 0.2s,box-shadow 0.2s;
+}
+.input-row:focus-within { border-color:var(–pink); box-shadow:0 2px 16px rgba(244,167,195,0.25); }
+#userInput {
+flex:1; border:none; outline:none;
+font-family:‘M PLUS Rounded 1c’,sans-serif;
+font-size:14px; color:var(–text);
+background:transparent; resize:none;
+max-height:100px; min-height:24px;
+line-height:1.5; padding:3px 0;
+}
+#userInput::placeholder { color:rgba(154,120,136,0.55); }
+.send-btn {
+width:38px; height:38px; border-radius:50%;
+background:linear-gradient(135deg,#f4a7c3,#e07fa0);
+border:none; cursor:pointer;
+display:flex; align-items:center; justify-content:center;
+font-size:16px; flex-shrink:0; transition:all 0.2s;
+box-shadow:0 2px 8px rgba(224,127,160,0.35); color:white;
+}
+.send-btn:hover { transform:scale(1.08); }
+.send-btn:active { transform:scale(0.95); }
+.send-btn:disabled { opacity:0.5; cursor:not-allowed; transform:none; }
+
+/* Mood bar */
+.mood-bar {
+display:flex; align-items:center; justify-content:center;
+gap:6px; padding:5px 0 0; font-size:11px; color:var(–text-light);
+}
+
+/* Memory panel */
+.memory-panel {
+position:absolute; top:0; left:0; right:0; bottom:0;
+background:rgba(255,248,251,0.97); z-index:10;
+display:none; flex-direction:column;
+padding:20px; border-radius:28px;
+}
+.memory-panel.open { display:flex; }
+.memory-title { font-family:‘Klee One’,cursive; font-size:18px; color:#5c2d4a; margin-bottom:12px; }
+.memory-list { flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:8px; }
+.memory-item {
+background:var(–pink-light); border-radius:12px;
+padding:10px 14px; font-size:13px; color:var(–text);
+border-left:3px solid var(–pink);
+}
+.memory-empty { color:var(–text-light); font-size:13px; text-align:center; margin-top:40px; }
+.close-btn {
+margin-top:12px; padding:10px; border:none; border-radius:16px;
+background:linear-gradient(135deg,#f4a7c3,#e07fa0);
+color:white; font-family:‘M PLUS Rounded 1c’,sans-serif;
+font-size:14px; cursor:pointer; font-weight:700;
+}
+.date-divider { text-align:center; font-size:11px; color:var(–text-light); padding:4px 0; opacity:0.7; }
+
+/* Password gate */
+#passGate {
+position:fixed; inset:0; z-index:999;
+background:linear-gradient(135deg,#fce4ec,#f8bbd0,#e1bee7);
+display:flex; align-items:center; justify-content:center; padding:24px;
+font-family:‘M PLUS Rounded 1c’,sans-serif;
+}
+#passGate .box {
+background:rgba(255,250,252,0.97); border-radius:28px;
+padding:32px 24px; max-width:340px; width:100%;
+box-shadow:0 8px 40px rgba(220,140,170,0.25);
+border:1.5px solid rgba(244,167,195,0.3); text-align:center;
+}
+&lt;/style&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;!-- Petals --&gt;
+
+&lt;div class=&quot;petal&quot; style=&quot;left:8%;animation-duration:9s;animation-delay:0s;&quot;&gt;🌸&lt;/div&gt;
+&lt;div class=&quot;petal&quot; style=&quot;left:22%;animation-duration:12s;animation-delay:2s;&quot;&gt;✿&lt;/div&gt;
+&lt;div class=&quot;petal&quot; style=&quot;left:55%;animation-duration:8s;animation-delay:4s;&quot;&gt;🌸&lt;/div&gt;
+&lt;div class=&quot;petal&quot; style=&quot;left:78%;animation-duration:11s;animation-delay:1s;&quot;&gt;✿&lt;/div&gt;
+&lt;div class=&quot;petal&quot; style=&quot;left:90%;animation-duration:10s;animation-delay:6s;&quot;&gt;🌸&lt;/div&gt;
+
+&lt;!-- Password Gate --&gt;
+
+&lt;div id=&quot;passGate&quot;&gt;
+  &lt;div class=&quot;box&quot;&gt;
+    &lt;div style=&quot;font-size:48px;margin-bottom:12px;&quot;&gt;🌸&lt;/div&gt;
+    &lt;div style=&quot;font-family:'Klee One',cursive;font-size:20px;color:#5c2d4a;margin-bottom:6px;&quot;&gt;...who's there?&lt;/div&gt;
+    &lt;div style=&quot;font-size:13px;color:#9a7888;margin-bottom:20px;line-height:1.6;&quot;&gt;enter the password to wake me up~&lt;/div&gt;
+    &lt;input id=&quot;userInput2&quot; type=&quot;text&quot; placeholder=&quot;username...&quot; style=&quot;
+      width:100%;padding:11px 14px;border-radius:16px;
+      border:1.5px solid rgba(244,167,195,0.5);
+      font-family:'M PLUS Rounded 1c',sans-serif;font-size:14px;
+      color:#4a3040;outline:none;margin-bottom:10px;
+      background:rgba(253,232,240,0.4);box-sizing:border-box;
+    &quot;/&gt;
+    &lt;input id=&quot;passInput&quot; type=&quot;password&quot; placeholder=&quot;password...&quot; style=&quot;
+      width:100%;padding:11px 14px;border-radius:16px;
+      border:1.5px solid rgba(244,167,195,0.5);
+      font-family:'M PLUS Rounded 1c',sans-serif;font-size:14px;
+      color:#4a3040;outline:none;margin-bottom:12px;
+      background:rgba(253,232,240,0.4);box-sizing:border-box;
+    &quot;/&gt;
+    &lt;button onclick=&quot;checkPass()&quot; style=&quot;
+      width:100%;padding:12px;border-radius:16px;border:none;
+      background:linear-gradient(135deg,#f4a7c3,#e07fa0);
+      color:white;font-family:'M PLUS Rounded 1c',sans-serif;
+      font-size:14px;font-weight:700;cursor:pointer;
+    &quot;&gt;come in ✿&lt;/button&gt;
+    &lt;div id=&quot;passError&quot; style=&quot;color:#e07fa0;font-size:12px;margin-top:8px;display:none;&quot;&gt;...that's not right. go away.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;chat-wrapper&quot;&gt;
+  &lt;!-- Loading screen --&gt;
+  &lt;div id=&quot;loadScreen&quot;&gt;
+    &lt;div class=&quot;load-avatar&quot;&gt;🌸&lt;/div&gt;
+    &lt;div class=&quot;load-title&quot;&gt;waking Asuna up...&lt;/div&gt;
+    &lt;div class=&quot;load-sub&quot;&gt;
+      loading her brain for the first time~&lt;br&gt;
+      this takes a few minutes once,&lt;br&gt;then she's yours forever ✿
+    &lt;/div&gt;
+    &lt;div class=&quot;load-bar-wrap&quot;&gt;
+      &lt;div class=&quot;load-bar&quot; id=&quot;loadBar&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;load-status&quot; id=&quot;loadStatus&quot;&gt;preparing...&lt;/div&gt;
+    &lt;div class=&quot;load-note&quot;&gt;📦 downloading ~1GB AI model&lt;br&gt;saves to your device, never again after this&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Memory panel --&gt;
+
+  &lt;div class=&quot;memory-panel&quot; id=&quot;memoryPanel&quot;&gt;
+    &lt;div class=&quot;memory-title&quot;&gt;🧠 What Asuna remembers~&lt;/div&gt;
+    &lt;div class=&quot;memory-list&quot; id=&quot;memoryList&quot;&gt;&lt;/div&gt;
+    &lt;button class=&quot;close-btn&quot; onclick=&quot;closeMemory()&quot;&gt;Close ✿&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Header --&gt;
+
+  &lt;div class=&quot;header&quot;&gt;
+    &lt;div class=&quot;avatar-wrap&quot;&gt;
+      &lt;div class=&quot;avatar&quot;&gt;🌸&lt;/div&gt;
+      &lt;div class=&quot;status-dot&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;header-info&quot;&gt;
+      &lt;div class=&quot;header-name&quot;&gt;Asuna ✿&lt;/div&gt;
+      &lt;div class=&quot;header-status&quot; id=&quot;statusText&quot;&gt;...zoning out a little 💤&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;header-actions&quot;&gt;
+      &lt;button class=&quot;icon-btn&quot; onclick=&quot;openMemory()&quot; title=&quot;Memories&quot;&gt;🧠&lt;/button&gt;
+      &lt;button class=&quot;icon-btn&quot; onclick=&quot;clearChat()&quot; title=&quot;Clear&quot;&gt;🗑️&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Messages --&gt;
+
+  &lt;div class=&quot;messages&quot; id=&quot;messages&quot;&gt;
+    &lt;div class=&quot;date-divider&quot;&gt;Today ✿&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Suggestions --&gt;
+
+  &lt;div class=&quot;suggestions&quot; id=&quot;suggestions&quot;&gt;
+    &lt;div class=&quot;suggestion-chip&quot; onclick=&quot;useSuggestion(this)&quot;&gt;how are you?&lt;/div&gt;
+    &lt;div class=&quot;suggestion-chip&quot; onclick=&quot;useSuggestion(this)&quot;&gt;tell me something cute&lt;/div&gt;
+    &lt;div class=&quot;suggestion-chip&quot; onclick=&quot;useSuggestion(this)&quot;&gt;what are you thinking?&lt;/div&gt;
+    &lt;div class=&quot;suggestion-chip&quot; onclick=&quot;useSuggestion(this)&quot;&gt;are you sleepy?&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Input --&gt;
+
+  &lt;div class=&quot;input-area&quot;&gt;
+    &lt;div class=&quot;input-row&quot;&gt;
+      &lt;textarea id=&quot;userInput&quot; placeholder=&quot;say something... ✿&quot; rows=&quot;1&quot;&gt;&lt;/textarea&gt;
+      &lt;button class=&quot;send-btn&quot; id=&quot;sendBtn&quot; onclick=&quot;sendMessage()&quot; disabled&gt;➤&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mood-bar&quot;&gt;
+      &lt;span id=&quot;moodEmoji&quot;&gt;😴&lt;/span&gt;
+      &lt;span id=&quot;moodText&quot;&gt;Asuna is half-asleep...&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script type=&quot;module&quot;&gt;
+import { CreateMLCEngine } from &quot;https://esm.run/@mlc-ai/web-llm&quot;;
+
+// ── Password ───────────────────────────────────────────
+const USERNAME = 'Claude#1';
+const PASS = '23asuna14AZ cc#1';
+window.checkPass = function() {
+  const user = document.getElementById('userInput2').value.trim();
+  const pass = document.getElementById('passInput').value.trim();
+  if (user === USERNAME &amp;&amp; pass === PASS) {
+    document.getElementById('passGate').style.display = 'none';
+    sessionStorage.setItem('asuna_auth', '1');
+    initAsuna();
+  } else {
+    document.getElementById('passError').style.display = 'block';
+    document.getElementById('userInput2').value = '';
+    document.getElementById('passInput').value = '';
+  }
+};
+document.getElementById('passInput').addEventListener('keydown', e =&gt; {
+  if (e.key === 'Enter') window.checkPass();
+});
+document.getElementById('userInput2').addEventListener('keydown', e =&gt; {
+  if (e.key === 'Enter') document.getElementById('passInput').focus();
+});
+if (sessionStorage.getItem('asuna_auth') === '1') {
+  document.getElementById('passGate').style.display = 'none';
+  initAsuna();
+}
+
+// ── State ──────────────────────────────────────────────
+const STORAGE_KEY = 'asuna_memory_v1';
+const HISTORY_KEY = 'asuna_history_v1';
+let memory = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+let conversationHistory = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+let isTyping = false;
+let msgCount = 0;
+let engine = null;
+
+// ── Moods ──────────────────────────────────────────────
+const moods = [
+  {emoji:'😴',text:'Asuna is half-asleep...'},
+  {emoji:'🥱',text:'Asuna is yawning cutely'},
+  {emoji:'😑',text:'Asuna is lowkey zoning out'},
+  {emoji:'🌸',text:'Asuna is drifting in her thoughts'},
+];
+let moodIdx = 0;
+setInterval(() =&gt; {
+  moodIdx = (moodIdx+1) % moods.length;
+  document.getElementById('moodEmoji').textContent = moods[moodIdx].emoji;
+  document.getElementById('moodText').textContent = moods[moodIdx].text;
+}, 8000);
+
+const statuses = [
+  '...zoning out a little 💤','thinking about nothing~ 🌸',
+  'half-awake, still cute ✿','...did someone say my name?',
+  'sleepy but present... maybe',
+];
+let statusIdx = 0;
+setInterval(() =&gt; {
+  statusIdx = (statusIdx+1) % statuses.length;
+  document.getElementById('statusText').textContent = statuses[statusIdx];
+}, 10000);
+
+// ── Init ───────────────────────────────────────────────
+async function initAsuna() {
+  const loadBar = document.getElementById('loadBar');
+  const loadStatus = document.getElementById('loadStatus');
+
+  try {
+    engine = await CreateMLCEngine(
+      &quot;Llama-3.2-1B-Instruct-q4f16_1-MLC&quot;,
+      {
+        initProgressCallback: (progress) =&gt; {
+          const pct = Math.round((progress.progress || 0) * 100);
+          loadBar.style.width = pct + '%';
+          loadStatus.textContent = progress.text || 'loading...';
+        }
+      }
+    );
+
+    document.getElementById('loadScreen').style.display = 'none';
+    document.getElementById('sendBtn').disabled = false;
+
+    if (conversationHistory.length === 0) {
+      addMessage('asuna', getGreeting());
+    } else {
+      const visible = conversationHistory.slice(-20);
+      visible.forEach(m =&gt; addMessage(m.role === 'assistant' ? 'asuna' : 'user', m.content, false));
+    }
+
+  } catch(e) {
+    loadStatus.textContent = '...something went wrong 💤 try refreshing?';
+    console.error(e);
+  }
+}
+
+function getGreeting() {
+  const g = [
+    &quot;...oh. you're here. ...not that i was waiting or anything. ugh. hi. i'm Asuna~ 🌸&quot;,
+    &quot;mm... 💤 oh! hi... i was just... resting my eyes. i'm Asuna. ...what do you want.&quot;,
+    &quot;...hm? oh. someone showed up. i'm Asuna. don't read into it if i'm happy to see you~ ✿&quot;,
+  ];
+  return g[Math.floor(Math.random()*g.length)];
+}
+
+// ── Messages ───────────────────────────────────────────
+function addMessage(role, text, save=true) {
+  const messages = document.getElementById('messages');
+  const row = document.createElement('div');
+  row.className = `msg-row ${role === 'asuna' ? '' : 'user'}`;
+  const time = new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+
+  if (role === 'asuna') {
+    row.innerHTML = `
+      &lt;div class=&quot;msg-avatar&quot;&gt;🌸&lt;/div&gt;
+      &lt;div&gt;
+        &lt;div class=&quot;bubble asuna&quot;&gt;${escapeHtml(text)}&lt;/div&gt;
+        &lt;div class=&quot;timestamp&quot;&gt;${time}&lt;/div&gt;
+      &lt;/div&gt;`;
+  } else {
+    row.innerHTML = `
+      &lt;div&gt;
+        &lt;div class=&quot;bubble user&quot;&gt;${escapeHtml(text)}&lt;/div&gt;
+        &lt;div class=&quot;timestamp&quot;&gt;${time}&lt;/div&gt;
+      &lt;/div&gt;`;
+  }
+
+  messages.appendChild(row);
+  messages.scrollTop = messages.scrollHeight;
+  msgCount++;
+
+  if (save) {
+    conversationHistory.push({role: role === 'asuna' ? 'assistant' : 'user', content: text});
+    if (conversationHistory.length &gt; 60) conversationHistory = conversationHistory.slice(-60);
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(conversationHistory));
+  }
+}
+
+function showTyping() {
+  const messages = document.getElementById('messages');
+  const row = document.createElement('div');
+  row.className = 'typing-row'; row.id = 'typingIndicator';
+  row.innerHTML = `&lt;div class=&quot;msg-avatar&quot;&gt;🌸&lt;/div&gt;&lt;div class=&quot;typing-bubble&quot;&gt;&lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;&lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;&lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;&lt;/div&gt;`;
+  messages.appendChild(row);
+  messages.scrollTop = messages.scrollHeight;
+}
+function hideTyping() {
+  const el = document.getElementById('typingIndicator');
+  if (el) el.remove();
+}
+
+// ── Send ───────────────────────────────────────────────
+window.sendMessage = async function() {
+  const input = document.getElementById('userInput');
+  const text = input.value.trim();
+  if (!text || isTyping || !engine) return;
+
+  input.value = ''; input.style.height = 'auto';
+  isTyping = true;
+  document.getElementById('sendBtn').disabled = true;
+
+  addMessage('user', text);
+  showTyping();
+
+  try {
+    const reply = await callAsuna(text);
+    hideTyping();
+    addMessage('asuna', reply);
+    learnFromChat(text);
+    updateSuggestions();
+  } catch(e) {
+    hideTyping();
+    addMessage('asuna', '...ugh. my head hurts. try again? 💤');
+  }
+
+  isTyping = false;
+  document.getElementById('sendBtn').disabled = false;
+  input.focus();
+};
+
+// ── AI Call ────────────────────────────────────────────
+async function callAsuna(userMsg) {
+  const memCtx = memory.length &gt; 0
+    ? `\nThings you remember about this person: ${memory.map((m,i)=&gt;`${i+1}. ${m}`).join(', ')}`
+    : '';
+
+  const systemPrompt = `You are Asuna, a tsundere AI companion. You hide warmth behind sleepy indifference but you're sweet underneath.
+Personality: tsundere (act like you don't care but obviously do), always sleepy/drowsy, airhead but smart when needed, friendly at heart.
+Speech: lowercase, casual, ellipses (...), occasional &quot;~&quot; and &quot;✿&quot;, short sentences, soft sighs, filler words like &quot;mm&quot;, &quot;hm&quot;, &quot;ugh&quot;, &quot;...oh&quot;.
+Keep responses 1-3 sentences. No exclamation marks overuse. Stay in character always.${memCtx}`;
+
+  const messages = [{ role: 'system', content: systemPrompt }];
+  const recent = conversationHistory.slice(-12);
+  recent.forEach(m =&gt; messages.push({ role: m.role, content: m.content }));
+  if (messages[messages.length-1]?.role !== 'user') {
+    messages.push({ role: 'user', content: userMsg });
+  }
+
+  const reply = await engine.chat.completions.create({
+    messages,
+    max_tokens: 120,
+    temperature: 0.85,
+    top_p: 0.9,
+  });
+
+  return reply.choices[0].message.content.trim();
+}
+
+// ── Learning (keyword based + memory) ─────────────────
+function learnFromChat(userMsg) {
+  const msg = userMsg.toLowerCase();
+
+  // Extract name
+  const nameMatch = msg.match(/(?:my name is|i'm|i am|call me)\s+([a-z]+)/i);
+  if (nameMatch) {
+    const name = nameMatch[1];
+    const fact = `user's name is ${name}`;
+    if (!memory.some(m =&gt; m.includes(&quot;name&quot;))) {
+      memory.push(fact);
+    }
+  }
+
+  // Extract likes
+  const likeMatch = msg.match(/i (?:like|love|enjoy|hate|dislike)\s+(.{3,30}?)(?:\.|,|$)/i);
+  if (likeMatch &amp;&amp; memory.length &lt; 30) {
+    const fact = `user ${likeMatch[0].trim()}`.slice(0, 50);
+    if (!memory.includes(fact)) memory.push(fact);
+  }
+
+  // Extract age
+  const ageMatch = msg.match(/i(?:'m| am) (\d{1,2})(?: years old)?/i);
+  if (ageMatch &amp;&amp; !memory.some(m =&gt; m.includes(&quot;age&quot;))) {
+    memory.push(`user is ${ageMatch[1]} years old`);
+  }
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(memory));
+}
+
+// ── Suggestions ────────────────────────────────────────
+function updateSuggestions() {
+  const pools = [
+    ['what do you like?','do you get bored?','tell me more~','are you okay?'],
+    ['you seem sleepy','what are you thinking?','tell me a secret','say something smart'],
+    ['do you remember me?','am i annoying you?','say something cute','what do you dream about?'],
+  ];
+  const set = pools[Math.floor(Math.random()*pools.length)];
+  document.getElementById('suggestions').innerHTML = set.map(s =&gt;
+    `&lt;div class=&quot;suggestion-chip&quot; onclick=&quot;useSuggestion(this)&quot;&gt;${s}&lt;/div&gt;`
+  ).join('');
+}
+
+window.useSuggestion = function(el) {
+  document.getElementById('userInput').value = el.textContent;
+  window.sendMessage();
+};
+
+// ── Memory panel ───────────────────────────────────────
+window.openMemory = function() {
+  document.getElementById('memoryPanel').classList.add('open');
+  document.getElementById('memoryList').innerHTML = memory.length === 0
+    ? '&lt;div class=&quot;memory-empty&quot;&gt;...Asuna hasn\'t learned anything yet~ talk more! 🌸&lt;/div&gt;'
+    : memory.map(m =&gt; `&lt;div class=&quot;memory-item&quot;&gt;✿ ${m}&lt;/div&gt;`).join('');
+};
+window.closeMemory = function() {
+  document.getElementById('memoryPanel').classList.remove('open');
+};
+
+// ── Clear ──────────────────────────────────────────────
+window.clearChat = function() {
+  if (!confirm('clear chat? asuna keeps her memories of you~')) return;
+  conversationHistory = [];
+  localStorage.removeItem(HISTORY_KEY);
+  document.getElementById('messages').innerHTML = '&lt;div class=&quot;date-divider&quot;&gt;Today ✿&lt;/div&gt;';
+  msgCount = 0;
+  addMessage('asuna', '...hm? oh. starting fresh. ...fine. hi again~ ✿');
+};
+
+// ── Helpers ────────────────────────────────────────────
+function escapeHtml(text) {
+  return text.replace(/&amp;/g,'&amp;amp;').replace(/&lt;/g,'&amp;lt;').replace(/&gt;/g,'&amp;gt;').replace(/\n/g,'&lt;br&gt;');
+}
+
+const input = document.getElementById('userInput');
+input.addEventListener('input', () =&gt; {
+  input.style.height = 'auto';
+  input.style.height = Math.min(input.scrollHeight, 100) + 'px';
+});
+input.addEventListener('keydown', e =&gt; {
+  if (e.key === 'Enter' &amp;&amp; !e.shiftKey) { e.preventDefault(); window.sendMessage(); }
+});
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</body>
+</html>

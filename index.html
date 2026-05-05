@@ -1,27 +1,12 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<title></title>
-	<meta name="generator" content="LibreOffice 25.8.4.2 (Linux)"/>
-	<meta name="created" content="00:00:00"/>
-	<meta name="changed" content="00:00:00"/>
-no	<style type="text/css">
-		@page { size: 8.27in 11.69in; margin: 0.79in }
-		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
-		pre { font-size: 10pt; font-family: "Liberation Mono", monospace; background: transparent }
-	</style>
-</head>
-<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre>
-&lt;!DOCTYPE html&gt;
 
-&;en&quot;&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;UTF-8&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-&lt;title&gt;Asuna ✿ offline&lt;/title&gt;
-&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&amp;family=M+PLUS+Rounded+1c:wght@300;400;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
-&lt;style&gt;
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asuna ✿ offline</title>
+<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=M+PLUS+Rounded+1c:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
   :root {
     --pink: #f4a7c3;
     --pink-light: #fde8f0;
@@ -326,122 +311,122 @@ padding:32px 24px; max-width:340px; width:100%;
 box-shadow:0 8px 40px rgba(220,140,170,0.25);
 border:1.5px solid rgba(244,167,195,0.3); text-align:center;
 }
-&lt;/style&gt;
+</style>
 
-&lt;/head&gt;
-&lt;body&gt;
+</head>
+<body>
 
-&lt;!-- Petals --&gt;
+<!-- Petals -->
 
-&lt;div class=&quot;petal&quot; style=&quot;left:8%;animation-duration:9s;animation-delay:0s;&quot;&gt;🌸&lt;/div&gt;
-&lt;div class=&quot;petal&quot; style=&quot;left:22%;animation-duration:12s;animation-delay:2s;&quot;&gt;✿&lt;/div&gt;
-&lt;div class=&quot;petal&quot; style=&quot;left:55%;animation-duration:8s;animation-delay:4s;&quot;&gt;🌸&lt;/div&gt;
-&lt;div class=&quot;petal&quot; style=&quot;left:78%;animation-duration:11s;animation-delay:1s;&quot;&gt;✿&lt;/div&gt;
-&lt;div class=&quot;petal&quot; style=&quot;left:90%;animation-duration:10s;animation-delay:6s;&quot;&gt;🌸&lt;/div&gt;
+<div class="petal" style="left:8%;animation-duration:9s;animation-delay:0s;">🌸</div>
+<div class="petal" style="left:22%;animation-duration:12s;animation-delay:2s;">✿</div>
+<div class="petal" style="left:55%;animation-duration:8s;animation-delay:4s;">🌸</div>
+<div class="petal" style="left:78%;animation-duration:11s;animation-delay:1s;">✿</div>
+<div class="petal" style="left:90%;animation-duration:10s;animation-delay:6s;">🌸</div>
 
-&lt;!-- Password Gate --&gt;
+<!-- Password Gate -->
 
-&lt;div id=&quot;passGate&quot;&gt;
-  &lt;div class=&quot;box&quot;&gt;
-    &lt;div style=&quot;font-size:48px;margin-bottom:12px;&quot;&gt;🌸&lt;/div&gt;
-    &lt;div style=&quot;font-family:'Klee One',cursive;font-size:20px;color:#5c2d4a;margin-bottom:6px;&quot;&gt;...who's there?&lt;/div&gt;
-    &lt;div style=&quot;font-size:13px;color:#9a7888;margin-bottom:20px;line-height:1.6;&quot;&gt;enter the password to wake me up~&lt;/div&gt;
-    &lt;input id=&quot;userInput2&quot; type=&quot;text&quot; placeholder=&quot;username...&quot; style=&quot;
+<div id="passGate">
+  <div class="box">
+    <div style="font-size:48px;margin-bottom:12px;">🌸</div>
+    <div style="font-family:'Klee One',cursive;font-size:20px;color:#5c2d4a;margin-bottom:6px;">...who's there?</div>
+    <div style="font-size:13px;color:#9a7888;margin-bottom:20px;line-height:1.6;">enter the password to wake me up~</div>
+    <input id="userInput2" type="text" placeholder="username..." style="
       width:100%;padding:11px 14px;border-radius:16px;
       border:1.5px solid rgba(244,167,195,0.5);
       font-family:'M PLUS Rounded 1c',sans-serif;font-size:14px;
       color:#4a3040;outline:none;margin-bottom:10px;
       background:rgba(253,232,240,0.4);box-sizing:border-box;
-    &quot;/&gt;
-    &lt;input id=&quot;passInput&quot; type=&quot;password&quot; placeholder=&quot;password...&quot; style=&quot;
+    "/>
+    <input id="passInput" type="password" placeholder="password..." style="
       width:100%;padding:11px 14px;border-radius:16px;
       border:1.5px solid rgba(244,167,195,0.5);
       font-family:'M PLUS Rounded 1c',sans-serif;font-size:14px;
       color:#4a3040;outline:none;margin-bottom:12px;
       background:rgba(253,232,240,0.4);box-sizing:border-box;
-    &quot;/&gt;
-    &lt;button onclick=&quot;checkPass()&quot; style=&quot;
+    "/>
+    <button onclick="checkPass()" style="
       width:100%;padding:12px;border-radius:16px;border:none;
       background:linear-gradient(135deg,#f4a7c3,#e07fa0);
       color:white;font-family:'M PLUS Rounded 1c',sans-serif;
       font-size:14px;font-weight:700;cursor:pointer;
-    &quot;&gt;come in ✿&lt;/button&gt;
-    &lt;div id=&quot;passError&quot; style=&quot;color:#e07fa0;font-size:12px;margin-top:8px;display:none;&quot;&gt;...that's not right. go away.&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+    ">come in ✿</button>
+    <div id="passError" style="color:#e07fa0;font-size:12px;margin-top:8px;display:none;">...that's not right. go away.</div>
+  </div>
+</div>
 
-&lt;div class=&quot;chat-wrapper&quot;&gt;
-  &lt;!-- Loading screen --&gt;
-  &lt;div id=&quot;loadScreen&quot;&gt;
-    &lt;div class=&quot;load-avatar&quot;&gt;🌸&lt;/div&gt;
-    &lt;div class=&quot;load-title&quot;&gt;waking Asuna up...&lt;/div&gt;
-    &lt;div class=&quot;load-sub&quot;&gt;
-      loading her brain for the first time~&lt;br&gt;
-      this takes a few minutes once,&lt;br&gt;then she's yours forever ✿
-    &lt;/div&gt;
-    &lt;div class=&quot;load-bar-wrap&quot;&gt;
-      &lt;div class=&quot;load-bar&quot; id=&quot;loadBar&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;load-status&quot; id=&quot;loadStatus&quot;&gt;preparing...&lt;/div&gt;
-    &lt;div class=&quot;load-note&quot;&gt;📦 downloading ~1GB AI model&lt;br&gt;saves to your device, never again after this&lt;/div&gt;
-  &lt;/div&gt;
+<div class="chat-wrapper">
+  <!-- Loading screen -->
+  <div id="loadScreen">
+    <div class="load-avatar">🌸</div>
+    <div class="load-title">waking Asuna up...</div>
+    <div class="load-sub">
+      loading her brain for the first time~<br>
+      this takes a few minutes once,<br>then she's yours forever ✿
+    </div>
+    <div class="load-bar-wrap">
+      <div class="load-bar" id="loadBar"></div>
+    </div>
+    <div class="load-status" id="loadStatus">preparing...</div>
+    <div class="load-note">📦 downloading ~1GB AI model<br>saves to your device, never again after this</div>
+  </div>
 
-  &lt;!-- Memory panel --&gt;
+  <!-- Memory panel -->
 
-  &lt;div class=&quot;memory-panel&quot; id=&quot;memoryPanel&quot;&gt;
-    &lt;div class=&quot;memory-title&quot;&gt;🧠 What Asuna remembers~&lt;/div&gt;
-    &lt;div class=&quot;memory-list&quot; id=&quot;memoryList&quot;&gt;&lt;/div&gt;
-    &lt;button class=&quot;close-btn&quot; onclick=&quot;closeMemory()&quot;&gt;Close ✿&lt;/button&gt;
-  &lt;/div&gt;
+  <div class="memory-panel" id="memoryPanel">
+    <div class="memory-title">🧠 What Asuna remembers~</div>
+    <div class="memory-list" id="memoryList"></div>
+    <button class="close-btn" onclick="closeMemory()">Close ✿</button>
+  </div>
 
-  &lt;!-- Header --&gt;
+  <!-- Header -->
 
-  &lt;div class=&quot;header&quot;&gt;
-    &lt;div class=&quot;avatar-wrap&quot;&gt;
-      &lt;div class=&quot;avatar&quot;&gt;🌸&lt;/div&gt;
-      &lt;div class=&quot;status-dot&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;header-info&quot;&gt;
-      &lt;div class=&quot;header-name&quot;&gt;Asuna ✿&lt;/div&gt;
-      &lt;div class=&quot;header-status&quot; id=&quot;statusText&quot;&gt;...zoning out a little 💤&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;header-actions&quot;&gt;
-      &lt;button class=&quot;icon-btn&quot; onclick=&quot;openMemory()&quot; title=&quot;Memories&quot;&gt;🧠&lt;/button&gt;
-      &lt;button class=&quot;icon-btn&quot; onclick=&quot;clearChat()&quot; title=&quot;Clear&quot;&gt;🗑️&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
+  <div class="header">
+    <div class="avatar-wrap">
+      <div class="avatar">🌸</div>
+      <div class="status-dot"></div>
+    </div>
+    <div class="header-info">
+      <div class="header-name">Asuna ✿</div>
+      <div class="header-status" id="statusText">...zoning out a little 💤</div>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" onclick="openMemory()" title="Memories">🧠</button>
+      <button class="icon-btn" onclick="clearChat()" title="Clear">🗑️</button>
+    </div>
+  </div>
 
-  &lt;!-- Messages --&gt;
+  <!-- Messages -->
 
-  &lt;div class=&quot;messages&quot; id=&quot;messages&quot;&gt;
-    &lt;div class=&quot;date-divider&quot;&gt;Today ✿&lt;/div&gt;
-  &lt;/div&gt;
+  <div class="messages" id="messages">
+    <div class="date-divider">Today ✿</div>
+  </div>
 
-  &lt;!-- Suggestions --&gt;
+  <!-- Suggestions -->
 
-  &lt;div class=&quot;suggestions&quot; id=&quot;suggestions&quot;&gt;
-    &lt;div class=&quot;suggestion-chip&quot; onclick=&quot;useSuggestion(this)&quot;&gt;how are you?&lt;/div&gt;
-    &lt;div class=&quot;suggestion-chip&quot; onclick=&quot;useSuggestion(this)&quot;&gt;tell me something cute&lt;/div&gt;
-    &lt;div class=&quot;suggestion-chip&quot; onclick=&quot;useSuggestion(this)&quot;&gt;what are you thinking?&lt;/div&gt;
-    &lt;div class=&quot;suggestion-chip&quot; onclick=&quot;useSuggestion(this)&quot;&gt;are you sleepy?&lt;/div&gt;
-  &lt;/div&gt;
+  <div class="suggestions" id="suggestions">
+    <div class="suggestion-chip" onclick="useSuggestion(this)">how are you?</div>
+    <div class="suggestion-chip" onclick="useSuggestion(this)">tell me something cute</div>
+    <div class="suggestion-chip" onclick="useSuggestion(this)">what are you thinking?</div>
+    <div class="suggestion-chip" onclick="useSuggestion(this)">are you sleepy?</div>
+  </div>
 
-  &lt;!-- Input --&gt;
+  <!-- Input -->
 
-  &lt;div class=&quot;input-area&quot;&gt;
-    &lt;div class=&quot;input-row&quot;&gt;
-      &lt;textarea id=&quot;userInput&quot; placeholder=&quot;say something... ✿&quot; rows=&quot;1&quot;&gt;&lt;/textarea&gt;
-      &lt;button class=&quot;send-btn&quot; id=&quot;sendBtn&quot; onclick=&quot;sendMessage()&quot; disabled&gt;➤&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;mood-bar&quot;&gt;
-      &lt;span id=&quot;moodEmoji&quot;&gt;😴&lt;/span&gt;
-      &lt;span id=&quot;moodText&quot;&gt;Asuna is half-asleep...&lt;/span&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  <div class="input-area">
+    <div class="input-row">
+      <textarea id="userInput" placeholder="say something... ✿" rows="1"></textarea>
+      <button class="send-btn" id="sendBtn" onclick="sendMessage()" disabled>➤</button>
+    </div>
+    <div class="mood-bar">
+      <span id="moodEmoji">😴</span>
+      <span id="moodText">Asuna is half-asleep...</span>
+    </div>
+  </div>
+</div>
 
-&lt;script type=&quot;module&quot;&gt;
-import { CreateMLCEngine } from &quot;https://esm.run/@mlc-ai/web-llm&quot;;
+<script type="module">
+import { CreateMLCEngine } from "https://esm.run/@mlc-ai/web-llm";
 
 // ── Password ───────────────────────────────────────────
 const USERNAME = 'Claude#1';
@@ -449,7 +434,7 @@ const PASS = '23asuna14AZ cc#1';
 window.checkPass = function() {
   const user = document.getElementById('userInput2').value.trim();
   const pass = document.getElementById('passInput').value.trim();
-  if (user === USERNAME &amp;&amp; pass === PASS) {
+  if (user === USERNAME && pass === PASS) {
     document.getElementById('passGate').style.display = 'none';
     sessionStorage.setItem('asuna_auth', '1');
     initAsuna();
@@ -459,10 +444,10 @@ window.checkPass = function() {
     document.getElementById('passInput').value = '';
   }
 };
-document.getElementById('passInput').addEventListener('keydown', e =&gt; {
+document.getElementById('passInput').addEventListener('keydown', e => {
   if (e.key === 'Enter') window.checkPass();
 });
-document.getElementById('userInput2').addEventListener('keydown', e =&gt; {
+document.getElementById('userInput2').addEventListener('keydown', e => {
   if (e.key === 'Enter') document.getElementById('passInput').focus();
 });
 if (sessionStorage.getItem('asuna_auth') === '1') {
@@ -487,7 +472,7 @@ const moods = [
   {emoji:'🌸',text:'Asuna is drifting in her thoughts'},
 ];
 let moodIdx = 0;
-setInterval(() =&gt; {
+setInterval(() => {
   moodIdx = (moodIdx+1) % moods.length;
   document.getElementById('moodEmoji').textContent = moods[moodIdx].emoji;
   document.getElementById('moodText').textContent = moods[moodIdx].text;
@@ -499,7 +484,7 @@ const statuses = [
   'sleepy but present... maybe',
 ];
 let statusIdx = 0;
-setInterval(() =&gt; {
+setInterval(() => {
   statusIdx = (statusIdx+1) % statuses.length;
   document.getElementById('statusText').textContent = statuses[statusIdx];
 }, 10000);
@@ -511,9 +496,9 @@ async function initAsuna() {
 
   try {
     engine = await CreateMLCEngine(
-      &quot;Llama-3.2-1B-Instruct-q4f16_1-MLC&quot;,
+      "Llama-3.2-1B-Instruct-q4f16_1-MLC",
       {
-        initProgressCallback: (progress) =&gt; {
+        initProgressCallback: (progress) => {
           const pct = Math.round((progress.progress || 0) * 100);
           loadBar.style.width = pct + '%';
           loadStatus.textContent = progress.text || 'loading...';
@@ -528,7 +513,7 @@ async function initAsuna() {
       addMessage('asuna', getGreeting());
     } else {
       const visible = conversationHistory.slice(-20);
-      visible.forEach(m =&gt; addMessage(m.role === 'assistant' ? 'asuna' : 'user', m.content, false));
+      visible.forEach(m => addMessage(m.role === 'assistant' ? 'asuna' : 'user', m.content, false));
     }
 
   } catch(e) {
@@ -539,9 +524,9 @@ async function initAsuna() {
 
 function getGreeting() {
   const g = [
-    &quot;...oh. you're here. ...not that i was waiting or anything. ugh. hi. i'm Asuna~ 🌸&quot;,
-    &quot;mm... 💤 oh! hi... i was just... resting my eyes. i'm Asuna. ...what do you want.&quot;,
-    &quot;...hm? oh. someone showed up. i'm Asuna. don't read into it if i'm happy to see you~ ✿&quot;,
+    "...oh. you're here. ...not that i was waiting or anything. ugh. hi. i'm Asuna~ 🌸",
+    "mm... 💤 oh! hi... i was just... resting my eyes. i'm Asuna. ...what do you want.",
+    "...hm? oh. someone showed up. i'm Asuna. don't read into it if i'm happy to see you~ ✿",
   ];
   return g[Math.floor(Math.random()*g.length)];
 }
@@ -555,17 +540,17 @@ function addMessage(role, text, save=true) {
 
   if (role === 'asuna') {
     row.innerHTML = `
-      &lt;div class=&quot;msg-avatar&quot;&gt;🌸&lt;/div&gt;
-      &lt;div&gt;
-        &lt;div class=&quot;bubble asuna&quot;&gt;${escapeHtml(text)}&lt;/div&gt;
-        &lt;div class=&quot;timestamp&quot;&gt;${time}&lt;/div&gt;
-      &lt;/div&gt;`;
+      <div class="msg-avatar">🌸</div>
+      <div>
+        <div class="bubble asuna">${escapeHtml(text)}</div>
+        <div class="timestamp">${time}</div>
+      </div>`;
   } else {
     row.innerHTML = `
-      &lt;div&gt;
-        &lt;div class=&quot;bubble user&quot;&gt;${escapeHtml(text)}&lt;/div&gt;
-        &lt;div class=&quot;timestamp&quot;&gt;${time}&lt;/div&gt;
-      &lt;/div&gt;`;
+      <div>
+        <div class="bubble user">${escapeHtml(text)}</div>
+        <div class="timestamp">${time}</div>
+      </div>`;
   }
 
   messages.appendChild(row);
@@ -574,7 +559,7 @@ function addMessage(role, text, save=true) {
 
   if (save) {
     conversationHistory.push({role: role === 'asuna' ? 'assistant' : 'user', content: text});
-    if (conversationHistory.length &gt; 60) conversationHistory = conversationHistory.slice(-60);
+    if (conversationHistory.length > 60) conversationHistory = conversationHistory.slice(-60);
     localStorage.setItem(HISTORY_KEY, JSON.stringify(conversationHistory));
   }
 }
@@ -583,7 +568,7 @@ function showTyping() {
   const messages = document.getElementById('messages');
   const row = document.createElement('div');
   row.className = 'typing-row'; row.id = 'typingIndicator';
-  row.innerHTML = `&lt;div class=&quot;msg-avatar&quot;&gt;🌸&lt;/div&gt;&lt;div class=&quot;typing-bubble&quot;&gt;&lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;&lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;&lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;&lt;/div&gt;`;
+  row.innerHTML = `<div class="msg-avatar">🌸</div><div class="typing-bubble"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>`;
   messages.appendChild(row);
   messages.scrollTop = messages.scrollHeight;
 }
@@ -623,18 +608,18 @@ window.sendMessage = async function() {
 
 // ── AI Call ────────────────────────────────────────────
 async function callAsuna(userMsg) {
-  const memCtx = memory.length &gt; 0
-    ? `\nThings you remember about this person: ${memory.map((m,i)=&gt;`${i+1}. ${m}`).join(', ')}`
+  const memCtx = memory.length > 0
+    ? `\nThings you remember about this person: ${memory.map((m,i)=>`${i+1}. ${m}`).join(', ')}`
     : '';
 
   const systemPrompt = `You are Asuna, a tsundere AI companion. You hide warmth behind sleepy indifference but you're sweet underneath.
 Personality: tsundere (act like you don't care but obviously do), always sleepy/drowsy, airhead but smart when needed, friendly at heart.
-Speech: lowercase, casual, ellipses (...), occasional &quot;~&quot; and &quot;✿&quot;, short sentences, soft sighs, filler words like &quot;mm&quot;, &quot;hm&quot;, &quot;ugh&quot;, &quot;...oh&quot;.
+Speech: lowercase, casual, ellipses (...), occasional "~" and "✿", short sentences, soft sighs, filler words like "mm", "hm", "ugh", "...oh".
 Keep responses 1-3 sentences. No exclamation marks overuse. Stay in character always.${memCtx}`;
 
   const messages = [{ role: 'system', content: systemPrompt }];
   const recent = conversationHistory.slice(-12);
-  recent.forEach(m =&gt; messages.push({ role: m.role, content: m.content }));
+  recent.forEach(m => messages.push({ role: m.role, content: m.content }));
   if (messages[messages.length-1]?.role !== 'user') {
     messages.push({ role: 'user', content: userMsg });
   }
@@ -658,21 +643,21 @@ function learnFromChat(userMsg) {
   if (nameMatch) {
     const name = nameMatch[1];
     const fact = `user's name is ${name}`;
-    if (!memory.some(m =&gt; m.includes(&quot;name&quot;))) {
+    if (!memory.some(m => m.includes("name"))) {
       memory.push(fact);
     }
   }
 
   // Extract likes
   const likeMatch = msg.match(/i (?:like|love|enjoy|hate|dislike)\s+(.{3,30}?)(?:\.|,|$)/i);
-  if (likeMatch &amp;&amp; memory.length &lt; 30) {
+  if (likeMatch && memory.length < 30) {
     const fact = `user ${likeMatch[0].trim()}`.slice(0, 50);
     if (!memory.includes(fact)) memory.push(fact);
   }
 
   // Extract age
   const ageMatch = msg.match(/i(?:'m| am) (\d{1,2})(?: years old)?/i);
-  if (ageMatch &amp;&amp; !memory.some(m =&gt; m.includes(&quot;age&quot;))) {
+  if (ageMatch && !memory.some(m => m.includes("age"))) {
     memory.push(`user is ${ageMatch[1]} years old`);
   }
 
@@ -687,8 +672,8 @@ function updateSuggestions() {
     ['do you remember me?','am i annoying you?','say something cute','what do you dream about?'],
   ];
   const set = pools[Math.floor(Math.random()*pools.length)];
-  document.getElementById('suggestions').innerHTML = set.map(s =&gt;
-    `&lt;div class=&quot;suggestion-chip&quot; onclick=&quot;useSuggestion(this)&quot;&gt;${s}&lt;/div&gt;`
+  document.getElementById('suggestions').innerHTML = set.map(s =>
+    `<div class="suggestion-chip" onclick="useSuggestion(this)">${s}</div>`
   ).join('');
 }
 
@@ -701,8 +686,8 @@ window.useSuggestion = function(el) {
 window.openMemory = function() {
   document.getElementById('memoryPanel').classList.add('open');
   document.getElementById('memoryList').innerHTML = memory.length === 0
-    ? '&lt;div class=&quot;memory-empty&quot;&gt;...Asuna hasn\'t learned anything yet~ talk more! 🌸&lt;/div&gt;'
-    : memory.map(m =&gt; `&lt;div class=&quot;memory-item&quot;&gt;✿ ${m}&lt;/div&gt;`).join('');
+    ? '<div class="memory-empty">...Asuna hasn\'t learned anything yet~ talk more! 🌸</div>'
+    : memory.map(m => `<div class="memory-item">✿ ${m}</div>`).join('');
 };
 window.closeMemory = function() {
   document.getElementById('memoryPanel').classList.remove('open');
@@ -713,27 +698,25 @@ window.clearChat = function() {
   if (!confirm('clear chat? asuna keeps her memories of you~')) return;
   conversationHistory = [];
   localStorage.removeItem(HISTORY_KEY);
-  document.getElementById('messages').innerHTML = '&lt;div class=&quot;date-divider&quot;&gt;Today ✿&lt;/div&gt;';
+  document.getElementById('messages').innerHTML = '<div class="date-divider">Today ✿</div>';
   msgCount = 0;
   addMessage('asuna', '...hm? oh. starting fresh. ...fine. hi again~ ✿');
 };
 
 // ── Helpers ────────────────────────────────────────────
 function escapeHtml(text) {
-  return text.replace(/&amp;/g,'&amp;amp;').replace(/&lt;/g,'&amp;lt;').replace(/&gt;/g,'&amp;gt;').replace(/\n/g,'&lt;br&gt;');
+  return text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
 }
 
 const input = document.getElementById('userInput');
-input.addEventListener('input', () =&gt; {
+input.addEventListener('input', () => {
   input.style.height = 'auto';
   input.style.height = Math.min(input.scrollHeight, 100) + 'px';
 });
-input.addEventListener('keydown', e =&gt; {
-  if (e.key === 'Enter' &amp;&amp; !e.shiftKey) { e.preventDefault(); window.sendMessage(); }
+input.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); window.sendMessage(); }
 });
-&lt;/script&gt;
+</script>
 
-&lt;/body&gt;
-&lt;/html&gt;</pre>
 </body>
 </html>
